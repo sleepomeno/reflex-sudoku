@@ -1,0 +1,41 @@
+Name: reflex-sudoku
+Version: 0.1
+Synopsis: Functional Reactive Sudoku
+Description: An implementation of Sudoku using the Reflex-DOM functional reactive DOM library
+License: BSD
+License-file: LICENSE
+Author: Gregor Riegler
+Maintainer: gregor.riegler@gmail.com
+Stability: Experimental
+Category: FRP
+Build-type: Simple
+Cabal-version: >=1.8
+
+library
+  hs-source-dirs: src
+  build-depends: 
+    base,
+    reflex,
+    ghcjs-dom, 
+    reflex-dom,
+    containers,
+    file-embed,
+    extra,
+    text,
+    time,
+    mtl
+  exposed-modules:
+    Reflex.Sudoku.Main
+  other-extensions: TemplateHaskell
+  ghc-prof-options: -fprof-auto
+  ghc-options:  -Wall -fwarn-tabs -funbox-strict-fields -O2
+
+executable reflex-sudoku
+  hs-source-dirs: src-bin
+  main-is: main.hs
+  build-depends:
+    base,
+    reflex-sudoku
+  other-extensions: TemplateHaskell
+  ghc-prof-options: -fprof-auto
+  ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
