@@ -2,27 +2,13 @@
 
 module Reflex.Sudoku.Main where
 
-import Prelude hiding (mapM, mapM_, all, sequence)
-
-import GHCJS.DOM.Element
-import Control.Monad hiding (mapM, mapM_, forM, forM_, sequence)
-import Control.Monad.Trans
-import Control.Monad.Fix
-import Control.Arrow ((***))
-import Data.Map (Map)
-import Data.Time.Clock
-import Data.Time.Format
+import Control.Monad 
 import qualified Data.Map as Map
-import Data.Foldable
 import Data.Monoid ((<>))
-import Data.List (intercalate)
 import Data.FileEmbed
-import Control.Concurrent
-import qualified Data.Text as T
 import Data.List.Extra hiding (list)
-import Control.Monad
 import qualified Data.Monoid as Monoid
-
+import Data.Maybe
 import Text.Read (readMaybe)
 
 import Reflex
@@ -30,7 +16,6 @@ import Reflex.Dom
 
 import Reflex.Sudoku.Common
 import qualified Reflex.Sudoku.Store as Store
-import Data.Maybe
 
 main :: IO ()
 main = do
